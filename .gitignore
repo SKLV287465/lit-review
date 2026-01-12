@@ -1,0 +1,13 @@
+.vscode
+review.aux
+review.fdb_latexmk
+review.fls
+review.log
+review.pdf
+review.synctex.gz
+sections/p[0-9].aux
+sections/p[0-9].fdb_latexmk
+sections/p[0-9].fls
+sections/p[0-9].log
+sections/p[0-9].pdf
+sections/p[0-9].synctex.gz
