@@ -11,3 +11,10 @@ sections/p[0-9].fls
 sections/p[0-9].log
 sections/p[0-9].pdf
 sections/p[0-9].synctex.gz
+
+sections/ref.aux
+sections/ref.fdb_latexmk
+sections/ref.fls
+sections/ref.log
+sections/ref.pdf
+sections/ref.synctex.gz

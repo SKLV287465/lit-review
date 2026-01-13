@@ -1,0 +1,63 @@
+@inproceedings {Chen_24,
+author = {Haibo Chen and Xie Miao and Ning Jia and Nan Wang and Yu Li and Nian Liu and Yutao Liu and Fei Wang and Qiang Huang and Kun Li and Hongyang Yang and Hui Wang and Jie Yin and Yu Peng and Fengwei Xu},
+title = {Microkernel Goes General: Performance and Compatibility in the {HongMeng} Production Microkernel},
+booktitle = {18th USENIX Symposium on Operating Systems Design and Implementation (OSDI 24)},
+year = {2024},
+isbn = {978-1-939133-40-3},
+address = {Santa Clara, CA},
+pages = {465--485},
+url = {https://www.usenix.org/conference/osdi24/presentation/chen-haibo},
+publisher = {USENIX Association},
+month = jul
+}
+
+@inproceedings{Liedtke_95,
+author = {Liedtke, J.},
+title = {On micro-kernel construction},
+year = {1995},
+isbn = {0897917154},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/224056.224075},
+doi = {10.1145/224056.224075},
+booktitle = {Proceedings of the Fifteenth ACM Symposium on Operating Systems Principles},
+pages = {237–250},
+numpages = {14},
+location = {Copper Mountain, Colorado, USA},
+series = {SOSP '95}
+}
+
+@inproceedings{Liedtke_93,
+author = {Liedtke, Jochen},
+title = {Improving IPC by kernel design},
+year = {1993},
+isbn = {0897916328},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/168619.168633},
+doi = {10.1145/168619.168633},
+abstract = {Inter-process communication (ipc) has to be fast and effective, otherwise programmers will not use remote procedure calls (RPC), multithreading and multitasking adequately. Thus ipc performance is vital for modern operating systems, especially μ-kernel based ones. Surprisingly, most μ-kernels exhibit poor ipc performance, typically requiring 100 μs for a short message transfer on a modern processor, running with 50 MHz clock rate.In contrast, we achieve 5 μs; a twentyfold improvement.This paper describes the methods and principles used, starting from the architectural design and going down to the coding level. There is no single trick to obtaining this high performance; rather, a synergetic approach in design and implementation on all levels is needed. The methods and their synergy are illustrated by applying them to a concrete example, the L3 μ-kernel (an industrial-quality operating system in daily use at several hundred sites). The main ideas are to guide the complete kernel design by the ipc requirements, and to make heavy use of the concept of virtual address space inside the μ-kernel itself.As the L3 experiment shows, significant performance gains are possible: compared with Mach, they range from a factor of 22 (8-byte messages) to 3 (4-Kbyte messages). Although hardware specific details influence both the design and implementation, these techniques are applicable to the whole class of conventional general purpose von Neumann processors supporting virtual addresses. Furthermore, the effort required is reasonably small, for example the dedicated parts of the μ-kernel can be concentrated in a single medium sized module.},
+booktitle = {Proceedings of the Fourteenth ACM Symposium on Operating Systems Principles},
+pages = {175–188},
+numpages = {14},
+location = {Asheville, North Carolina, USA},
+series = {SOSP '93}
+}
+
+@inproceedings{Bershad_93,
+author = {Chen, J. Bradley and Bershad, Brian N.},
+title = {The impact of operating system structure on memory system performance},
+year = {1993},
+isbn = {0897916328},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/168619.168629},
+doi = {10.1145/168619.168629},
+abstract = {In this paper we evaluate the memory system behavior of two distinctly different implementations of the UNIX operating system: DEC's Ultrix, a monolithic system, and Mach 3.0 with CMU's UNIX server, a microkernel-based system. In our evaluation we use combined system and user memory reference traces of thirteen industry-standard workloads. We show that the microkernel-based system executes substantially more non-idle system instructions for an equivalent workload than the monolithic system. Furthermore, the average instruction for programs running on Mach has a higher cost, in terms of memory cycles per instruction, than on Ultrix. In the context of our traces, we explore a number of popular assertions about the memory system behavior of modern operating systems, paying special attention to the effect that Mach's microkernel architecture has on system performance. Our results indicate that many, but not all of the assertions are true, and that a few, while true, have only negligible impact on real system performance.},
+booktitle = {Proceedings of the Fourteenth ACM Symposium on Operating Systems Principles},
+pages = {120–133},
+numpages = {14},
+location = {Asheville, North Carolina, USA},
+series = {SOSP '93}
+}
+
