@@ -5,12 +5,23 @@ review.fls
 review.log
 review.pdf
 review.synctex.gz
+review.bcf
+review.out
+review.run.xml
+review.bbl
+review.blg
+
 sections/p[0-9].aux
 sections/p[0-9].fdb_latexmk
 sections/p[0-9].fls
 sections/p[0-9].log
 sections/p[0-9].pdf
 sections/p[0-9].synctex.gz
+sections/p[0-9].bcf
+sections/p[0-9].out
+sections/p[0-9].run.xml
+sections/p[0-9].bbl
+sections/p[0-9].blg
 
 sections/ref.aux
 sections/ref.fdb_latexmk
@@ -18,3 +29,8 @@ sections/ref.fls
 sections/ref.log
 sections/ref.pdf
 sections/ref.synctex.gz
+sections/ref.bcf
+sections/ref.out
+sections/ref.run.xml
+sections/ref.bbl
+sections/ref.blg
