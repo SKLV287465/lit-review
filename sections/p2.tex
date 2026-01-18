@@ -6,11 +6,27 @@
 % present issue/topic to be discussed
 % give an overview of how the review will be organised
 \section{Introduction}
-Regarding performance, microkernel systems have had a bad reputation in comparison to monolithic kernel systems. This idea seems to be firmly supplanted within the psyche of the operating systems space, especially since the MACH 3.0 debacle (Bershad \& Chen, 1993).
+% Regarding performance, microkernel systems have had a bad reputation in comparison to monolithic kernel systems. This idea seems to be firmly supplanted within the psyche of the operating systems space, especially since the MACH 3.0 debacle (Bershad \& Chen, 1993).
 
-Microkernel Goes General: Performance and Compatibility in the HongMeng Production Microkernel (Chen, 2024) introduces a production "microkernel" system that is able provide sufficient performance for real world general operating system usage. However, this paper outlines a series of optimisations and design choices which makes a departure from a strictly purist concept of a microkernel, which had been argued to be essential for good performance by Jochen Liedtke (On $\mu$-kernel construction). Furthermore, The LionsOS preprint suggests that this departure may not be required to emulate or even beat the performance of Linux.
+% Microkernel Goes General: Performance and Compatibility in the HongMeng Production Microkernel (Chen, 2024) introduces a production "microkernel" system that is able provide sufficient performance for real world general operating system usage. However, this paper outlines a series of optimisations and design choices which makes a departure from a strictly purist concept of a microkernel, which had been argued to be essential for good performance by Jochen Liedtke (On $\mu$-kernel construction). Furthermore, The LionsOS preprint suggests that this departure may not be required to emulate or even beat the performance of Linux.
 
-This literature review will revolve around the design choices made by Chen et al and whether or not it was necessary to make these choices and whether these choices were well informed choices, keeping in mind previous and upcoming research. I will begin by analysing their implementation of isolation zones as a way to bypass IPC and also their decision to use 
+% This literature review will revolve around the design choices made by Chen et al and whether or not it was necessary to make these choices and whether these choices were well informed choices, keeping in mind previous and upcoming research. I will begin by analysing their implementation of isolation zones as a way to bypass IPC and also their decision to use 
 
+
+% benefits
+% downsides
+% hongmeng
+% structure.
+
+The concept of a microkernel can be formalised on Liedtke's \textit{Minimality Principle} \cite{Liedtke_95}. Essentially, everything which can feasibly be implemented outside of the kernel is implemented outside the kernel. This results in a couple technological advantages: \begin{enumerate}
+    \item A modular system design is made inherent to the system.
+    \item Faults whether they be part of operating system functionality is isolated and therefore unlikely to collapse the whole system and can be easily restarted.
+    \item The system becomes more flexible as components can easily be swapped/re-implemented for different policies for different use cases.
+    \item The kernel codebase becomes much smaller meaning that it is likelier that the kernel has fewer bugs and can be feasibly verified
+\end{enumerate} \cite{Liedtke_95,Heiser_25}\\
+% compatibility is gonna be kind of hard to talk about,
+However, this design comes with some compromises; namely compatibility and performance. Despite many state-of-the-art (SOTA) microkernels being POSIX subset-compliant, microkernels fail to be used widely due to problems with binary compatibility and architectural design challenges regarding some system calls like \texttt{fork} and \texttt{poll}. \cite{Chen_24} Whereas the problems regarding compatibility can be overcome with engineering effort and widespread adoption, the issues regarding performance is more intrinsic and if not solved, may prevent the masses from adopting microkernels despite their many advantages.\\\\
+Due to the fact that operating system services are implemented outside the kernel, communication between these services and client processes must occur through inter-process-communication (IPC). It is already well established that an IPC call would be much more expensive than a simple mode switch on a monolithic kernel system. Before L3, IPC had taken from ~2500 to ~25000 CPU cycles for a short message transfer, rendering microkernels as a concept which was theoretically nice but practically unviable. With Liedtke's optimisations with L3, he was able to bring this cost down to 250 cycles and coupled with strictly minimal design was also able to avoid the high measured memory-cycles-per-instruction (MCPI) cost of MACH 3.0. \cite{Bershad_93,Liedtke_93,Liedtke_95}.\\
+ 
 \newpage
 \end{document}
